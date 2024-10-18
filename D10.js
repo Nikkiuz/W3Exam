@@ -364,40 +364,68 @@ const movies = [
   Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
 
+
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
   */
- const newestMovie = function() {
+//  const newestMovie = function() {
 
-  // creo una variabile dando per scontato che il più nuovo sia il film a posizione 0
-      let newest = movies[0]
+//   // creo una variabile dando per scontato che il più nuovo sia il film a posizione 0
+//       let newest = movies[0]
 
       //ciclo tutti i film partendo da posizione 1 per confrontare tra di loro quale dei valori parseInt delle stringhe all'interno di Year sia maggiore, dopodichè lo confronto con il rispettivo valore della variabile newest.
 
-      for (let i = 1; i < movies.length; i++) {
-        if (parseInt(movies[i].Year) > parseInt(newest.Year)) {
-            newest = movies[i]; //
-        }
-    }
+//       for (let i = 1; i < movies.length; i++) {
+//         if (parseInt(movies[i].Year) > parseInt(newest.Year)) {
+//             newest = movies[i]; //
+//         }
+//     }
 
-    return newest;
-}
+//     return newest;
+// }
   
-  console.log(newestMovie())
+//   console.log(newestMovie())
   
 
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
 */
+// const countMovies = function() {
+  
+//   return movies.length
+// }
+// console.log(countMovies())
 
 
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
 */
+// const onlyTheYears = function () {
+
+//   // creo un array vuoto da riempire
+//   let arrayOfYears = []
+//   // ciclo l'array movies per identificare e successivamente inserire i valori alla voce Years e li pusho dentro l'array vuoto
+//   for (let i = 0; i < movies.length; i++) {
+//     arrayOfYears.push(movies[i].Year)
+//     }
+//     return arrayOfYears  
+// }
+// console.log(onlyTheYears())
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
+
+const onlyInLastMillennium = function(){
+
+  //filtro tutte le voci dell'array movies creando un nuovo array con solo i film che hanno nella sezione year un valore che inizia con '19'
+  return movies.filter(function(movie) {
+    return movie.Year.startsWith('19')
+})
+}
+  
+
+console.log(onlyInLastMillennium())
 
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
@@ -415,6 +443,8 @@ const movies = [
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
+
+
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -434,88 +464,96 @@ const movies = [
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
 
-const forCicle = function(){
-// identifico l'elemento usando il tag
-  let td = document.getElementsByTagName('td')
-//ottenendo un "array" devo ciclare ogni elemento per mostrarlo in console
-  for (let i = 0; i < td.length; i++) {
-    console.log(td[i].innertext)
-    
-  }
-}
+// const forCicle = function(){
+// // identifico l'elemento usando il tag
+//   let td = document.getElementsByTagName('td')
+// //ottenendo un "array" devo ciclare ogni elemento per mostrarlo in console
+//   for (let i = 0; i < td.length; i++) {
+//     console.log(td[i].innertext)
+//   }
+// }
 
 
-/* ESERCIZIO 23
-  Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
-*/
-// identifico gli elementi sparando ad un orso polare!
-const paintRed = document.querySelectorAll('a')
+// /* ESERCIZIO 23
+//   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
+// */
+// // identifico gli elementi sparando ad un orso polare!
+// const paintRed = document.querySelectorAll('a')
 
-// ciclo la nodelist con foreach per dare il nuovo colore di background a tutti gli elementi
-paintRed.forEach(function(link) {
-  link.style.backgroundColor = 'red'
-})
-/* ESERCIZIO 24
-  Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
-*/
-// identifico la lista che mi servirà usando il suo id
-const list = document.getElementById('myList')
+// // ciclo la nodelist con foreach per dare il nuovo colore di background a tutti gli elementi
+// paintRed.forEach(function(link) {
+//   link.style.backgroundColor = 'red'
+// })
+// /* ESERCIZIO 24
+//   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
+// */
+// // identifico la lista che mi servirà usando il suo id
+// const list = document.getElementById('myList')
 
-//creo un nuovo elemento li
-const newElement = document.createElement('li')
+// //creo un nuovo elemento li
+// const newElement = document.createElement('li')
 
-//inserisco un testo per visualizzare il nuovo elemento li nella pagina 
-newElement.innerText('prova')
+// //inserisco un testo per visualizzare il nuovo elemento li nella pagina 
+// newElement.innerText('prova')
 
-//appendo il nuovo elemento alla lista precedentemente identificata
-list.appendChild(newElement)
+// //appendo il nuovo elemento alla lista precedentemente identificata
+// list.appendChild(newElement)
 
-/* ESERCIZIO 25
-  Scrivi una funzione per svuotare la lista non ordinata con id "myList".
-*/
+// /* ESERCIZIO 25
+//   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
+// */
+
+// function clearList() {
+ 
+//   //non identifico nuovamente la lista poichè l'ho già fatto nell'esercizio precedente; faccio un ciclo while per controllare se esiste un primo elemento della lista dopodichè lo cancello finchè questa non si svuota completamente.
+  
+//   while (list.firstChild) {
+//       list.removeChild(list.firstChild);
+//   }
+// }
 
 
 
-/* ESERCIZIO 26
-  Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
-*/
+// /* ESERCIZIO 26
+//   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
+// */
 
-//sparo di nuovo agli orsi polari per identificare tutti i tr
-const allTr = document.querySelectorAll('tr')
+// //sparo di nuovo agli orsi polari per identificare tutti i tr
+// const allTr = document.querySelectorAll('tr')
 
-//ciclo ogni elemento dell'"array" per aggiungere la classe scelta
-allTr.forEach(function(tr) {
-  tr.classList.add('test')
-})
-// [EXTRA] JS Avanzato
+// //ciclo ogni elemento dell'"array" per aggiungere la classe scelta
+// allTr.forEach(function(tr) {
+//   tr.classList.add('test')
+// })
+// // [EXTRA] JS Avanzato
 
-/* ESERCIZIO 27
-  Crea una funzione chiamata "halfTree" che riceve un numero come parametro e costruisce un mezzo albero di "*" (asterischi) dell'altezza fornita.
+// /* ESERCIZIO 27
+//   Crea una funzione chiamata "halfTree" che riceve un numero come parametro e costruisce un mezzo albero di "*" (asterischi) dell'altezza fornita.
 
-  Esempio:
-  halfTree(3)
+//   Esempio:
+//   halfTree(3)
 
-  *
-  **
-  ***
+//   *
+//   **
+//   ***
 
-*/
+// */
 
-/* ESERCIZIO 28
-  Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
+// /* ESERCIZIO 28
+//   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
-  Esempio:
-  tree(3)
+//   Esempio:
+//   tree(3)
 
-    *
-   ***
-  *****
+//     *
+//    ***
+//   *****
 
-*/
+// */
 
-/* ESERCIZIO 29
-  Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
-*/
+// /* ESERCIZIO 29
+//   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
+// */
 
-/* Questo array viene usato per gli esercizi. Non modificarlo. */
+// /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
