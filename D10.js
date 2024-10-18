@@ -59,11 +59,36 @@ REGOLE
 /* ESERCIZIO 1
   Crea una funzione chiamata "dice": deve generare un numero casuale tra 1 e 6.
 */
+// const dice = function () { 
+//   const randomNum = Math.random()
+//   // variabile che crea un numero randomatico
+//   const diceNum = randomNum * 6
+//   // do come parametro un massimo di numeri che vanno dallo 0,1111111 al 5,9999 (+ o -)
+//   const integerResult= Math.ceil(diceNum)
+//   // dico alla variabile di arrotondare per eccesso il risultato randomico per ottenere risultati dall'1 al 6
 
+//   return integerResult
+//   // ritorno il risultato
+  
+// }
+
+// console.log(dice())
 
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
+
+// const whoIsBigger = function (n1,n2) {
+//   // faccio un if per mettere una condizione
+//     if (n1<n2) {
+//       return n2    
+//       // se il primo parametro è minore, allora tornerà il secondo parametro
+//   } else {
+//     return n1
+//     // altrimenti tornerà il primo parametro
+//   } 
+// }
+// console.log(whoIsBigger(7,4))
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
@@ -71,10 +96,36 @@ REGOLE
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
 
+// const splitMe = function(str){
+//   // creo un if per porre una condizione sulla funzione
+//   if (typeof str === 'string' && str.length > 0){
+//     //  se  il parametro è una stringa e se la sua lunghezza è maggiore di 0
+//   return str.split(' ')
+//   // mi tornerà come parametro un array di stringhe usando  lo spazio tra le parole come separatore
+//   } else {
+//     return []
+//     // altrimenti mi tornerà un array vuoto
+//   } 
+//   }
+// console.log(splitMe('Ciao Epicode io sono Niccolò'))
+
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+
+// const deleteOne = function (str, boolean) {
+//   // inserisco un if per creare una condizione basata sul valore del booleano
+//   if (boolean === true){
+//     return str.slice(1)
+//     // se il booleano è true, mi tornerà la stringa senza il primo carattere grazie allo slice che partirà dell'indice 1 della str. 
+//   } else {
+//     return str.slice(0, -1)
+//     // altrimenti lo slice farà partire la str dalla posizione 0 e arriverà fino alla penultima posizione eliminando così l'ultiumo carattere
+//   }
+// }
+
+// console.log(deleteOne('tergicristallo', 1>2))
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
@@ -82,20 +133,50 @@ REGOLE
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
 
+// const onlyLetters = function(str) {
+//   return str.replace(/\d+/g, '').trim();
+//   // ho usato il metodo replace, trovato su internet, per sostituire tutti i numeri con una stringa vuota ''; /\d+/g -> mi sono fidato del codice online che mi diceva fosse una espressione regolare per trovare tutte le cifre nella stringa ma non ho idea nè del come nè del perchè ¯\_(ツ)_/¯ ; alla fine ho messo un trim per eliminare gli spazi vuoti dalla stringa. 
+// }
+
+// console.log(onlyLetters("Mi chiamo Niccolò e sono nato nel 1990"));
+
+
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 
+// const isThisAnEmail = function(str){
+//   // verifico se è presente un simbolo @ nella stringa
+//   return str.includes('@')
+// }
+
+// // l'unico problema è che mi da true anche se ci sono due '@', ma cercando su internet mi continua a dare il regex di prima e mi sembra inutile continuare ad utilizzarlo visto che non ne ho capito il senso.
+
+// console.log(isThisAnEmail("epicode@epicode.com"))
+
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
+
+// const whatDayIsIt = function(){
+//   // genero un array contenente i nomi dei giorni della settimana
+//   const dayNames = ['domenica','lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì','sabato']
+
+//   // creo un nuovo oggetto Date e poi ritorno un numero da 0 a 6 che rappresenta il giorno della settimana (dove 0 è Domenica e 6 è Sabato)
+//   const currentDay = new Date().getDay();
+
+//   // e uso il numero ottenuto per accedere all'elemento corrispondente nell'array
+//   return dayNames[currentDay];
+//   }
+  
+
+// console.log(whatDayIsIt())
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
   Deve invocare la precedente funzione dice() il numero di volte specificato nel parametro, e deve tornare un oggetto contenente una proprietà "sum":
   il suo valore deve rappresentare il totale di tutti i valori estratti con le invocazioni di dice().
   L'oggetto ritornato deve anche contenere una proprietà "values", contenente un array con tutti i valori estratti dalle invocazioni di dice().
-
   Example:
   rollTheDices(3) => ritorna {
       sum: 10
@@ -103,22 +184,68 @@ REGOLE
   }
 */
 
+// const rollTheDices = function(num) {
+//   // creo un array vuoto da riempire successivamente
+//   const values = []
+//   // creo la costante per la somma
+//   let sum = 0
+
+//   // uso un ciclo for per ottenere un numero di valori pari al parametro 'num' creando una costante roll che richiama la funzione dice per ottenere dei numeri randomici; pusho i valori all'interno dell'array values e faccio la somma dei numeri randomici ottenuti con la costante roll
+// for (let i = 0; i < num; i++) {
+//   const roll = dice()
+//   values.push(roll)
+//   sum += roll;
+// }
+// //ritorno i due risultati
+
+// return {
+//   sum: sum,
+//   values: values
+// }
+// }
+
+// console.log(rollTheDices(3))
+
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
 
+// const howManyDays = function (date) {
+
+
+  
+// }
+
+
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
+
+// const isTodayMyBirthday = function (date){
+
+//   //faccio una costante con la data del mio compleanno
+//  const myBirthday = new Date('24-07-1990')
+
+//  //ne creo una per vedere la data odierna
+//  const today = new Date()
+
+//  // confronto giorno e mese della data odierna con i corrispettivi della costante mYBirthday
+// return today.getDate() === myBirthday.getDate() && today.getMonth() === myBirthday.getMonth()
+// }
+
+// console.log(isTodayMyBirthday())
+
 
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
 
 /* ESERCIZIO 11
-  Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
-  in esso la proprietà chiamata come la stringa passata come secondo parametro.
+  Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
+const deleteProp = function (obj, str){
+
+}
 
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
