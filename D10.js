@@ -462,6 +462,7 @@ const movies = [
 
 
 
+
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
@@ -577,5 +578,5 @@ const movies = [
 //   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 // */
 
-// /* Questo array viene usato per gli esercizi. Non modificarlo. */
+
 
