@@ -416,20 +416,22 @@ const movies = [
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
 
-const onlyInLastMillennium = function(){
+// const onlyInLastMillennium = function(){
 
-  //filtro tutte le voci dell'array movies creando un nuovo array con solo i film che hanno nella sezione year un valore che inizia con '19'
-  return movies.filter(function(movie) {
-    return movie.Year.startsWith('19')
-})
-}
+//   //filtro tutte le voci dell'array movies creando un nuovo array con solo i film che hanno nella sezione year un valore che inizia con '19'
+//   return movies.filter(function(movie) {
+//     return movie.Year.startsWith('19')
+// })
+// }
   
 
-console.log(onlyInLastMillennium())
+// console.log(onlyInLastMillennium())
 
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
+
+
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
