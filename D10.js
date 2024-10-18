@@ -435,8 +435,9 @@ const movies = [
 */
 
 const forCicle = function(){
-
+// identifico l'elemento usando il tag
   let td = document.getElementsByTagName('td')
+//ottenendo un "array" devo ciclare ogni elemento per mostrarlo in console
   for (let i = 0; i < td.length; i++) {
     console.log(td[i].innertext)
     
@@ -447,22 +448,26 @@ const forCicle = function(){
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
-
+// identifico gli elementi sparando ad un orso polare!
 const paintRed = document.querySelectorAll('a')
 
+// ciclo la nodelist con foreach per dare il nuovo colore di background a tutti gli elementi
 paintRed.forEach(function(link) {
   link.style.backgroundColor = 'red'
 })
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
-
+// identifico la lista che mi servirà usando il suo id
 const list = document.getElementById('myList')
 
+//creo un nuovo elemento li
 const newElement = document.createElement('li')
 
+//inserisco un testo per visualizzare il nuovo elemento li nella pagina 
 newElement.innerText('prova')
 
+//appendo il nuovo elemento alla lista precedentemente identificata
 list.appendChild(newElement)
 
 /* ESERCIZIO 25
@@ -475,8 +480,10 @@ list.appendChild(newElement)
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
+//sparo di nuovo agli orsi polari per identificare tutti i tr
 const allTr = document.querySelectorAll('tr')
 
+//ciclo ogni elemento dell'"array" per aggiungere la classe scelta
 allTr.forEach(function(tr) {
   tr.classList.add('test')
 })
