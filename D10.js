@@ -390,6 +390,7 @@ const movies = [
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
 */
 
+
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
 */
@@ -421,30 +422,64 @@ const movies = [
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
 
+// const select = document.getElementById('container')
+
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
-*/
+
+*/ 
+// const select2 = document.getElementsByTagName('td')
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
 
+const forCicle = function(){
+
+  let td = document.getElementsByTagName('td')
+  for (let i = 0; i < td.length; i++) {
+    console.log(td[i].innertext)
+    
+  }
+}
+
+
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 
+const paintRed = document.querySelectorAll('a')
+
+paintRed.forEach(function(link) {
+  link.style.backgroundColor = 'red'
+})
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
+
+const list = document.getElementById('myList')
+
+const newElement = document.createElement('li')
+
+newElement.innerText('prova')
+
+list.appendChild(newElement)
 
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
+
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 
+const allTr = document.querySelectorAll('tr')
+
+allTr.forEach(function(tr) {
+  tr.classList.add('test')
+})
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
