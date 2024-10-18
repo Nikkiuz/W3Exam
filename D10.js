@@ -364,7 +364,6 @@ const movies = [
   Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
 
-
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
   */
@@ -377,11 +376,9 @@ const movies = [
 
 //       for (let i = 1; i < movies.length; i++) {
 //         if (parseInt(movies[i].Year) > parseInt(newest.Year)) {
-//             newest = movies[i]; //
+//             newest = movies[i] //
 //         }
-//     }
-
-//     return newest;
+//     } return newest
 // }
   
 //   console.log(newestMovie())
@@ -431,16 +428,39 @@ const movies = [
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
 
+// const sumAllTheYears = function(){
+//   //creo una variabile per la somma
+//   let sum = 0
+//   //ciclo tutte le voci dell'array che mi servono e sommo i loro valori trasformati in numero con parseInt
+//   for (let i = 0; i < movies.length; i++) {
+//     sum += parseInt(movies[i].Year)
+//   }
+//   return sum
+// }
 
+// console.log(sumAllTheYears())
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
-*/
+  */
+//   //filtro tutte le voci dell'array movies creando un nuovo array con solo i film che hanno all'interno del titolo il valore str esplicitato nella stringa in basso
+
+//   const searchByTitle = function (str) {
+//     return movies.filter(function(movie) {
+//       return movie.Title.toLowerCase().includes(str.toLowerCase())
+//   })
+// }
+
+// console.log(searchByTitle('The'))
+  
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
+
+
+
 
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
